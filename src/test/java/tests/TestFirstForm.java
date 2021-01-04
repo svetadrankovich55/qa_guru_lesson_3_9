@@ -122,7 +122,7 @@ public class TestFirstForm extends TestBase {
             $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         });
 
-        step("Заполнить форму регистрации студента ", () -> {
+        step("Заполнить форму регистрации студента без указания текущего адреса", () -> {
             $("#firstName").val(firstName);
             $("#lastName").val(lastName);
             $("#userEmail").val(userEmail);
@@ -146,7 +146,7 @@ public class TestFirstForm extends TestBase {
             $("#submit").click();
         });
 
-        step("Проверить успешность заполнения формы регистрации", () -> {
+        step("Проверить успешность заполнения формы регистрации без указания текущего адреса", () -> {
             $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
             $x("//td[text()='Student Name']/following::td[1]").shouldHave(text(firstName + " " + lastName));
             $x("//td[text()='Student Email']/following::td[1]").shouldHave(text(userEmail));
