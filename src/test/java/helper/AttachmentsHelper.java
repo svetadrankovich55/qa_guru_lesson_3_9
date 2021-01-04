@@ -28,7 +28,7 @@ public class AttachmentsHelper {
     }
 
 
-   @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
+  @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
     public static String attachVideo() {
         return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
                 + getVideoUrl()
@@ -39,7 +39,7 @@ public class AttachmentsHelper {
         return "https://" + System.getProperty("remote.browser.url") + "/video/" + getSessionId() + ".mp4";
     }
 
-    public static String getSessionId(){
+   public static String getSessionId(){
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
 
